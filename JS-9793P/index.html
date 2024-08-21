@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus</title>
+    <link rel="shortcut icon" href="focus.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="main" class="p-5">
+      <div class="container">
+        <div class="d-flex justify-content-center align-items-center yukseklik">
+          <div>
+            <div>
+              <h1 class="display-1 fs-3 text-center">
+                Çalışmaya başladığınızdan beri telefonunuz
+                <span id="sayi" class="fw-bolder"><b>0</b></span> kere
+                dikkatinizi dağıttı.
+              </h1>
+            </div>
+            <div>
+              <button
+                type="button"
+                onclick="fonksiyon()"
+                class="w-100 btn btn-outline-light btn-lg mt-3 mb-3"
+              >
+                TELEFONA BAKTIM
+              </button>
+            </div>
+            <div>
+              <button
+                type="button"
+                onclick="sifirla()"
+                class="w-100 btn btn-outline-light btn-lg mb-3"
+              >
+                SIFIRLA
+              </button>
+            </div>
+            <div class="row mt-4 justify-content-center">
+              <div class="col-6 text-center mb-3">
+                <h5>
+                  Aşağıdaki müzikleri odağınızı kolaylaştırmak amacıyla
+                  dinleyebilirsiniz
+                </h5>
+              </div>
+              <div class="w-100"></div>
+              <div class="text-center text-xl-start col-12 col-xl-4">
+                <h6>10 Dakikalık Şömine Sesi</h6>
+                <audio controls>
+                  <source
+                    src="10 Minutes of Relaxing Fire Sounds, Fireplace, Bonfire-[AudioTrimmer.com].mp3"
+                    type="audio/mpeg"
+                  />
+                </audio>
+              </div>
+              <div class="col-xl-4 text-center text-xl-end mt-3 mt-xl-0">
+                <h6>10 Dakikalık Kütüphane Sesi</h6>
+                <audio controls>
+                  <source
+                    src="10 Minutes of Library Sounds.mp3"
+                    type="audio/mpeg"
+                  />
+                </audio>
+              </div>
+            </div>
+            <section class="mt-5 pt-5">
+              <h3>İşte odaklanmanızı kolaylaştıracak bazı web siteleri:</h3>
+              <ul>
+                <li>
+                  <a href="https://www.forestapp.cc/">Forest</a>: Çalışırken
+                  sanal bir ağaç dikmenizi sağlar. Ağaç, belirli bir süre
+                  boyunca çalışmanız durumunda büyür; eğer dikkatiniz dağılırsa
+                  ağaç ölür.
+                </li>
+                <li>
+                  <a href="https://pomofocus.io/">Pomodoro Timer</a>: Pomodoro
+                  tekniğini kullanarak çalışma ve molalar arasında zaman
+                  yönetimi yapmanıza yardımcı olur.
+                </li>
+                <li>
+                  <a href="https://www.noisli.com/">Noisli</a>: Arka planda
+                  rahatlatıcı sesler oluşturmanıza olanak tanır, bu da
+                  odaklanmanıza yardımcı olabilir.
+                </li>
+                <li>
+                  <a href="https://www.stayfocusd.com/">StayFocusd</a>: Belirli
+                  web sitelerine erişiminizi sınırlayarak dikkatinizin
+                  dağılmasını önler.
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let degisenSayi = document.getElementById("sayi");
+      degisenSayi.innerHTML = 0;
+      function fonksiyon() {
+        degisenSayi.innerHTML++;
+      }
+      function sifirla() {
+        degisenSayi.innerHTML = 0;
+      }
+
+      var baslik = document.title;
+      var yeniBaslik = "ÇALIŞMAYA DÖN!";
+
+      window.onblur = function () {
+        document.title = yeniBaslik;
+      };
+
+      window.onfocus = function () {
+        document.title = baslik;
+      };
+    </script>
+  </body>
+</html>
