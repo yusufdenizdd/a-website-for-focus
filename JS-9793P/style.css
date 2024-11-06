@@ -1,9 +1,9 @@
 .yukseklik {
-  height: 70vh;
+  min-height: 70vh;
 }
 
 #main {
-  height: 100vh;
+  min-height: 100vh;
   color: white;
   background-image: url("img.jpg");
   background-repeat: no-repeat;
